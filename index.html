@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galactic AI Image Viewer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0f0f23;
+      background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+      background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+      background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+      animation: backgroundScroll 60s linear infinite;
+    }
+
+    @keyframes backgroundScroll {
+      from {background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;}
+      to {background-position: 550px 550px, 590px 610px, 680px 820px, 620px 650px;}
+    }
+
+    .space-border {
+      border: 2px solid #4fd1c5;
+      box-shadow: 0 0 15px #4fd1c5, inset 0 0 15px #4fd1c5;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 5px #4fd1c5, 0 0 10px #4fd1c5, 0 0 15px #4fd1c5;
+    }
+  </style>
+</head>
+<body class="text-gray-100">
+  <div class="flex justify-center items-center min-h-screen py-10">
+    <div class="space-y-8 bg-gray-900 bg-opacity-80 p-8 rounded-lg space-border">
+      <h1 class="text-4xl font-bold text-center mb-8 glow-text">Galactic AI Image Viewer</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-blue-300">Nebula Alpha</h3>
+          <img id="image1" src="image1.png" alt="AI Image 1" class="max-w-full h-auto rounded-lg space-border">
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-purple-300">Nebula Beta</h3>
+          <img id="image2" src="image2.png" alt="AI Image 2" class="max-w-full h-auto rounded-lg space-border">
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <button id="compareBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 space-border">
+          Initiate Cosmic Comparison
+        </button>
+      </div>
+      <div id="differenceContainer" class="hidden">
+        <h2 class="text-2xl font-bold mb-4 text-center glow-text">Cosmic Differential Analysis:</h2>
+        <img id="differenceImage" src="" alt="Difference Image" class="max-w-full h-auto mx-auto rounded-lg space-border">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
